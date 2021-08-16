@@ -1,0 +1,91 @@
+@mixin icon($height, $width) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: $icon-top;
+  background-color: $black;
+}
+@mixin icon-before($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $black;
+  content: "";
+  top: $top;
+}
+@mixin icon-after($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $black;
+  content: "";
+  top: $top;
+}
+
+.icon-left {
+  @include icon($icon-height, $icon-width);
+  left: 0rem; 
+    
+  &:before{
+    @include icon-before($icon-height, $icon-width, -$icon-top);
+  }
+    
+  &:after{
+    @include icon-after($icon-height, $icon-width, $icon-top);
+  }
+    
+  &:hover{
+    cursor: pointer;
+  }
+}
+  
+.icon-right {
+  @include icon($icon-height, $icon-width);
+  left: $icon-width;
+    
+  &:before{
+    @include icon-before($icon-height, $icon-width, -$icon-top);
+  }
+    
+  &:after{
+    @include icon-after($icon-height, $icon-width, $icon-top);
+  }
+}
+  
+&.open {
+  .icon-left {
+    transition-duration: 0.5s;
+    background: transparent;
+      
+    &:before{
+      transform: rotateZ(45deg) scaleX(1.4) 
+      translate($icon-transform, $icon-transform);
+    }
+
+    &:after{
+      transform: rotateZ(-45deg) scaleX(1.4) 
+      translate($icon-transform, -$icon-transform);
+    }
+  }
+    
+  .icon-right {
+    transition-duration: 0.5s;
+    background: transparent;  
+      
+    &:before{
+      transform: rotateZ(-45deg) scaleX(1.4) 
+      translate(-$icon-transform, $icon-transform);
+    }
+
+    &:after{
+      transform: rotateZ(45deg) scaleX(1.4) 
+      translate(-$icon-transform, -$icon-transform);
+    }
+  }
+}
+&:hover {
+  cursor: pointer;
+}

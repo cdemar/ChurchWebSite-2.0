@@ -1,0 +1,20 @@
+// This helps with my main SCSS content
+@import 'functions';
+@import 'variables';
+@import 'media';
+@import 'animation';
+@import 'bgImg';
+
+// This is the main SCSS content
+@import 'globals';
+@import 'header';
+@import 'hero';
+@import 'service';
+@import 'mission';
+@import 'leader'; 
+@import 'contact';
+@import 'footer';
+.black-line {
+  height: .75vh;
+  background-color: $black
+}

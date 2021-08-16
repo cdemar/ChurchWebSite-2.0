@@ -1,0 +1,32 @@
+@mixin bg--position-1920 {
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: calc(42% + 5vw);
+}
+
+@mixin cross { // Photo by Jonathan Borba from Pexels
+  background: url(/dist/img/cross_1920px.jpg);
+  @include bg--position-1920;
+
+  @include breakpoint-down (med) {
+    background: url(/dist/img/cross_1280px.jpg);
+  }
+
+  @include breakpoint-down (sm) {
+    background: url(/dist/img/cross_640px.jpg);
+  }
+}
+
+@mixin mountion { // Photo by Tobias Bjørkli from Pexels
+  background: url(/dist/img/mountain_1920px.jpg);
+  @include bg--position-1920;
+
+  @include breakpoint-down (med) {
+    background: url(/dist/img/mountain_1280px.jpg);
+  }
+
+  @include breakpoint-down (sm) {
+    background: url(/dist/img/mountain_640px.jpg);
+  }
+}

@@ -1,0 +1,66 @@
+#hero {
+  @include cross;
+}
+
+.hero {
+  background-color: rgba(215, 141, 29, 0.5);
+  color: var(--main-text-color2);
+  min-height: calc(100vh - 210px);
+  
+  @include breakpoint-down(lg){
+    min-height: calc(100vh - 200px);
+  }
+  @include breakpoint-down(med){
+    min-height: calc(100vh - 210px);
+  }
+  @include breakpoint-down(xsm){
+    min-height: calc(100vh - 178px);
+  }
+
+  .flex {
+    min-height: calc(100vh - 210px);
+  
+    @include breakpoint-down(lg){
+      min-height: calc(100vh - 200px);
+    }
+    @include breakpoint-down(med){
+      min-height: calc(100vh - 210px);
+    }
+    @include breakpoint-down(xsm){
+      min-height: calc(100vh - 178px);
+    }
+
+    @media (max-width: 22em){
+      padding-top: rem(38);
+    padding-bottom: rem(38);
+    }
+  }
+
+  &__welcome {
+
+    h2 {
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+    }
+  }
+
+  p {
+    @include breakpoint-up (sm) {
+      padding-right: rem(120);
+      padding-left: rem(120);
+    }
+    @include breakpoint-up (med) {
+      padding-right: rem(240);
+      padding-left: rem(240);
+    }
+  }
+
+  &__btn {
+    border: rem(4) solid $white;
+    a {
+      color: $black;
+    }
+  }
+}

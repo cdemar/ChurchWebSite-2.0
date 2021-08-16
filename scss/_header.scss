@@ -1,0 +1,116 @@
+.header {
+  background-color: $splash-color;
+  z-index: 1;
+
+  @import 'hamburger';
+
+
+  .overlay {
+    opacity: 0;
+    position: fixed;
+    top: rem(210);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient($splash-color, transparent);
+  
+    @include breakpoint-down(xsm){
+      top: rem(178);
+    }
+  }
+  
+  .language {
+    font-style: italic;
+    padding-bottom:  rem(16);
+
+    p {
+      color: $white;
+      display: inline;
+      padding: 0 rem(5);
+
+      @include breakpoint-down(xsm){
+        display: none;
+      }
+    }
+
+    a {
+      color: $white;
+
+      &:hover {
+          color: $link-color;
+      }
+
+      @include breakpoint-down(med) {
+      font-size: rem(20);
+    }
+      @include breakpoint-down(xsm){
+        font-size: rem(16);
+
+        &:not(:last-child) {
+          margin-bottom: rem(6);
+        }
+      }      
+    }
+
+    .active {
+      color: $link-color;
+    }
+
+    @include breakpoint-down(xsm){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: rem(22);
+    }
+  }
+
+  &__logo {
+    font-family: $palatino;
+    font-size: rem(48);
+    font-weight: bold;
+    text-align: center;
+
+    @include breakpoint-down(med) {
+      font-size: rem(52);
+    }
+    @include breakpoint-down(xsm) {
+      font-size: rem(35);
+    }
+  }
+
+  #btnHamburger { // Mobile Menu
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: rem(20) rem(23);
+  }
+
+  &__menu {
+    position: absolute;
+    width: calc(100% - 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: $white;
+    padding: rem(26);
+    border-radius: rem(5); 
+
+    a {
+      padding: rem(10);
+    }
+  }
+
+  &__links {
+    font-size: rem(30);
+    text-transform: uppercase;
+
+    .sections {
+      a {
+        &:not(:last-child) {
+          margin-right: rem(8);
+        }
+      }
+    }
+  }
+}

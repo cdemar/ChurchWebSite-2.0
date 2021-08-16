@@ -1,0 +1,47 @@
+#mission {
+  @include mountion;
+}
+
+.mission {
+  min-height: 100vh;
+  // height: Max(100vh, rem(800));
+  background-color:rgba(170,56,30, 0.5);
+  color: $white;
+
+  &__content {
+    @include breakpoint-up (med) {
+      display: flex;
+      padding-bottom: rem(38);
+    }
+  }
+
+  &__img {
+    width: 70%;
+    height: auto;
+    border-radius: 50%;
+
+    @include breakpoint-up (med) {
+      width: 40%;
+    }
+  }
+
+  &__section {
+    @include breakpoint-up (med) {
+      margin-left: rem(75);
+      margin-right: rem(75);
+     }
+  }
+ 
+  &__title {
+    @include breakpoint-up (med) {
+      padding-bottom: rem(38);
+     }
+  }
+
+  &__btn {
+    border: rem(4) solid $white;
+    a {
+      color: $white;
+    }
+  }
+}

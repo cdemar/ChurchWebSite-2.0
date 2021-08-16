@@ -1,0 +1,46 @@
+#leader {
+  min-height: 100vh;
+  background-color: $avender-gray;
+
+  @include breakpoint-down(sm) {
+    padding-bottom: rem(38);
+  }
+}
+
+.leader {
+
+  &__grid {
+    @include breakpoint-up(med) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    width: rem(450);
+
+    @include breakpoint-down(xsm) {
+      width: rem(280);
+    }
+  }
+
+  &__img {
+    padding-bottom: rem(20);
+
+    img {
+      width: 65%;
+      height: auto;
+      border-radius: 50%;
+
+      @include breakpoint-up(med) {
+        width: 75%;
+      }
+    }
+  }
+  
+  &__txt {
+    width: rem(200);
+    border: rem(3) solid $black;
+  }
+}

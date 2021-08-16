@@ -1,0 +1,52 @@
+#service {
+  min-height: 100vh;
+  background-color: $avender-gray;
+
+  @include breakpoint-down(sm) {
+    padding-bottom: rem(38);
+  }
+
+  h1 {
+    @media (max-width: 44em){ // 504px
+      width: rem(455);
+    }
+    @include breakpoint-down(sm) {
+      width: rem(340);
+    }
+    @include breakpoint-down(xsm) {
+      width: auto;
+    }
+  }
+}
+
+.border {
+  border-style: solid;
+  border-width: medium;
+  width: 65vw;
+  min-height: rem(710);
+
+  @include breakpoint-down(sm) {
+    padding-right: rem(24);
+    padding-left: rem(24);
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+
+    @include breakpoint-up(sm) {
+      padding-right: rem(24);
+      padding-left: rem(24);
+    }
+  }
+
+  &__btn {
+    border: rem(4) solid $black;
+    a {
+      text-transform: uppercase;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+#contact {
+  @include mountion;
+}
+
+.contact {
+  min-height: 100vh;
+  // height: Max(100vh, rem(800));
+  background-color:rgba(170,56,30, 0.5);
+  color: $white;
+
+  h3 {
+    @media (min-width: 55em){
+      width: rem(880);
+    }
+  }
+
+  &__info {
+    
+    p {
+      &:not(:last-child) {
+        padding-bottom: rem(15);
+      }
+
+      @include breakpoint-up(med) {
+        font-size: rem(30);
+      }
+
+      a {
+        color: $white;
+
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+
+    h6 {
+      @include breakpoint-up(med) {
+        font-size: rem(27);
+      }
+    }
+  }
+}
